@@ -96,5 +96,3 @@ You can read more information about daysjs jalali on [jalaliday repo](https://gi
 ## Contributors
 <a href="https://github.com/mr-mohamadmhz">
 <img src="https://github.com/mr-mohamadmhz.png" width="60px;"/></a></sub>
-<a href="https://github.com/hamidrezaghanbari">
-<img src="https://github.com/hamidrezaghanbari.png" width="60px;"/></a>
