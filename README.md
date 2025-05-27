@@ -1,6 +1,6 @@
 
 # Ant-Design Jalali/Hijri DatePicker (Ant 4/5)
-Ant Design Jalali/Shamsi calendar DatePicker and RangePicker (Support Ant design v5 and v4). [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
+Ant Design Jalali/Shamsi calendar DatePicker and RangePicker (Support Ant design v5 and v4). [Day.js](https://github.com/iamkun/dayjs) and [jalali-moment](https://github.com/fingerpich/jalali-moment)
 
 # Demo
 https://mr-mohamadmhz.github.io/antd-jalali-plus-v2
@@ -65,7 +65,7 @@ ReactDOM.render(
 );
 ```
 ### How to set value  
-You should pass dayjs object with [jalali calendar](https://github.com/alibaba-aero/jalaliday)
+You should pass dayjs object with [jalali calendar](https://github.com/fingerpich/jalali-moment)
 
 ```jsx
 import dayjs from 'dayjs'
@@ -91,7 +91,7 @@ const date = dayjs()
 const jalaliDate = date.calendar('jalali')
 ```
 
-You can read more information about daysjs jalali on [jalaliday repo](https://github.com/alibaba-aero/jalaliday).
+You can read more information about daysjs jalali on [jalali-moment repo](https://github.com/fingerpich/jalali-moment).
 
 ## Contributors
 <a href="https://github.com/mr-mohamadmhz">
