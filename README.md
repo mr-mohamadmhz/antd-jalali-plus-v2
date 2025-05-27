@@ -1,100 +1,158 @@
+# Ant Design Jalali/Shamsi DatePicker - v2
 
-# Ant-Design Jalali/Hijri DatePicker (Ant 4/5)
-Ant Design Jalali/Shamsi calendar DatePicker and RangePicker (Support Ant design v5 and v4). [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
+Welcome to **antd-jalali-plus-v2**, a fully-featured Jalali (Shamsi/Persian) DatePicker, RangePicker, and Calendar component set built on top of Ant Design v4 and v5. This package replaces the deprecated `jalaliday` with `jalali-moment` for Jalali date handling and offers full RTL and localization support.
 
-# Demo
-https://mr-mohamadmhz.github.io/antd-jalali-plus-v2
+---
 
-## Top Features
-- Support Ant Design Version 5
-- Support React 16/17/18
-- Fix All RTL Issues
+## 🌟 Project Overview
 
-#### Note:
-**antd-jalali-plus-v2** is a forked and upgraded version of [antd-jalali](https://www.npmjs.com/package/antd-jalali), which was a valuable tool but is no longer maintained.
+**antd-jalali-plus-v2** is a maintained and upgraded fork of the original [`antd-jalali`](https://www.npmjs.com/package/antd-jalali) package, which is no longer maintained. It ensures compatibility with the latest Ant Design versions, fixes RTL issues, and replaces the date management engine with `jalali-moment`.
 
-#### Purpose:
-The primary goal of **antd-jalali-plus-v2** is to ensure that users who rely on the functionality of **antd-jalali** continue to have access to a reliable and supported solution with latest version of [Ant design](https://ant.design/). By taking over maintenance responsibilities, We are committed to providing timely updates, bug fixes, and improvements to enhance the overall usability and stability of the package.
+This library supports React 16/17/18 and provides seamless integration for Persian date pickers alongside the Gregorian ones.
 
-## Ant version 5.x.x
+---
+
+## 🛠️ Key Features
+
+- Support for **Ant Design v5** and **v4**
+- Jalali (Shamsi) calendar support using **jalali-moment**
+- React 16, 17, and 18 compatible
+- Full **RTL** support and localization for `fa_IR` and `en_US`
+- Drop-in replacement components for Ant Design DatePicker, RangePicker, and Calendar
+- Includes `<JalaliLocaleListener />` helper for locale synchronization
+
+---
+
+## 📦 Installation
+
+For **Ant Design 5.x**:
+
+```bash
+npm install antd-jalali-plus-v2@^1.4.0
+# or
+yarn add antd-jalali-plus-v2@^1.4.0
+For Ant Design 4.x:
 ```
-npm i antd-jalali-plus-v2@v1.4.x
+
+```bash
+Copy
+Edit
+npm install antd-jalali-plus-v2@^1.3.0
+# or
+yarn add antd-jalali-plus-v2@^1.3.0
+Or simply install the latest version:
 ```
 
-## Ant version 4.x.x
-```
-npm i antd-jalali-plus-v2@v1.3.x
-```
-
-## Installation
-```
-npm i antd-jalali-plus-v2
-```
-or 
-```
-yarn antd-jalali-plus-v2
+```bash
+Copy
+Edit
+npm install antd-jalali-plus-v2
 ```
 
-## Usage
+# or
 
-```ts
+yarn add antd-jalali-plus-v2
+🚀 Quick Start
+
+### Example usage integrating Gregorian and Jalali date pickers with localization and RTL support:
+
+```tsx
+Copy;
+Edit;
 import React from "react";
 import ReactDOM from "react-dom";
-import { DatePicker, ConfigProvider } from "antd";
-import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "antd-jalali-plus-v2";
+import { ConfigProvider, DatePicker } from "antd";
+import {
+  DatePicker as DatePickerJalali,
+  Calendar,
+  JalaliLocaleListener,
+} from "antd-jalali-plus-v2";
 import fa_IR from "antd/lib/locale/fa_IR";
-import en_US from "antd/lib/locale/en_US";
 import "antd/dist/antd.css";
-import "./index.css";
 
 ReactDOM.render(
-    <div className="App">
-        Gregorian: <DatePicker />
-        <br />
-        <br />
-        <ConfigProvider locale={fa_IR}  direction="rtl">
-          <JalaliLocaleListener/>
-           Jalali: <DatePickerJalali />
-           Jalali RangePicker: <DatePickerJalali.RangePicker />
-           <br />
-           <br />
-           <Calendar />
-        </ConfigProvider>
-    </div>,
+  <ConfigProvider locale={fa_IR} direction="rtl">
+    <JalaliLocaleListener />
+    <div style={{ padding: 24 }}>
+      Gregorian DatePicker: <DatePicker />
+      <br />
+      <br />
+      Jalali DatePicker: <DatePickerJalali />
+      <br />
+      <br />
+      Jalali RangePicker: <DatePickerJalali.RangePicker />
+      <br />
+      <br />
+      Jalali Calendar: <Calendar />
+    </div>
+  </ConfigProvider>,
   document.getElementById("root")
 );
 ```
-### How to set value  
-You should pass dayjs object with [jalali calendar](https://github.com/alibaba-aero/jalaliday)
 
-```jsx
-import dayjs from 'dayjs'
-import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, useJalaliLocaleListener } from "antd-jalali-plus-v2";
+## 📅 Handling Dates with jalali-moment
 
-// You should call this hook in child component of <ConfigProvider>
-// You can also use component helper for this hook <JalaliLocaleListener> 
-useJalaliLocaleListener();
+This library uses jalali-moment for Jalali date support. Example for creating and passing dates:
 
-// If you want to all new instanses of dayjs use jalali calendar (no matter what is the locale), 
-// you can set default calendar for dayjs and remove useJalaliLocaleListener hook.
-dayjs.calendar('jalali');
+```tsx
+Copy
+Edit
+import moment from "jalali-moment";
 
-const date = dayjs("1399-01-01", {jalali:true});
+// Create a Jalali date instance
+const jalaliDate = moment("1403-01-01", "jYYYY-jMM-jDD");
 
-<DatePickerJalali defaultValue={date}/>
-<CalendarJalali  value={date}/>
-```
-also you can create a jalali date without changing default calendar
-
-```js
-const date = dayjs()
-const jalaliDate = date.calendar('jalali')
+// Pass it as defaultValue or value
+<DatePickerJalali defaultValue={jalaliDate} />
+<Calendar value={jalaliDate} />
 ```
 
-You can read more information about daysjs jalali on [jalaliday repo](https://github.com/alibaba-aero/jalaliday).
+To convert or format Jalali and Gregorian dates:
 
-## Contributors
-<a href="https://github.com/mr-mohamadmhz">
-<img src="https://github.com/mr-mohamadmhz.png" width="60px;"/></a></sub>
-<a href="https://github.com/hamidrezaghanbari">
-<img src="https://github.com/hamidrezaghanbari.png" width="60px;"/></a>
+```tsx
+Copy;
+Edit;
+const onChange = value => {
+  const gregorian = moment(value).locale("en").format("YYYY-MM-DD");
+  const jalali = moment(value).locale("fa").format("jYYYY-jMM-jDD");
+  console.log({ gregorian, jalali });
+};
+```
+
+## 🌍 Localization and RTL
+
+Use Ant Design's ConfigProvider to set locale (fa_IR or en_US) and text direction (rtl or ltr).
+
+Include <JalaliLocaleListener /> inside ConfigProvider to sync locale and calendar correctly.
+
+Supports right-to-left layouts out of the box.
+
+## 📖 API Overview
+
+All components support props from Ant Design counterparts:
+
+```
+<DatePickerJalali />
+
+<DatePickerJalali.RangePicker />
+
+<Calendar />
+```
+
+These accept props such as defaultValue, value, onChange, disabledDate, etc.
+
+## 🤝 Contribution & Maintenance
+
+This package is actively maintained by Mohamad Mahzoun to keep the Jalali date picking experience up to date with Ant Design changes and community needs.
+
+## 🧑‍💻 Author
+
+Mohamad Mahzoun
+GitHub: @mr-mohamadmhz
+
+## 📄 License
+
+This project is licensed under the MIT License — feel free to use it in personal and commercial projects.
+
+Thank you for using antd-jalali-plus-v2!
+If you have any questions or want to contribute, please open issues or pull requests on GitHub.
