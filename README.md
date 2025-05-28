@@ -1,6 +1,11 @@
 # Ant Design Jalali/Shamsi DatePicker - v2
 
+<<<<<<< HEAD
 Welcome to **antd-jalali-plus-v2**, a fully-featured Jalali (Shamsi/Persian) DatePicker, RangePicker, and Calendar component set built on top of Ant Design v4 and v5. This package replaces the deprecated `jalali-moment` with `jalali-moment` for Jalali date handling and offers full RTL and localization support.
+=======
+# Ant-Design Jalali/Hijri DatePicker (Ant 4/5)
+Ant Design Jalali/Shamsi calendar DatePicker and RangePicker (Support Ant design v5 and v4). [Day.js](https://github.com/iamkun/dayjs) and [jalali-moment](https://github.com/fingerpich/jalali-moment)
+>>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
 
 ---
 
@@ -89,6 +94,11 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+<<<<<<< HEAD
+=======
+### How to set value  
+You should pass dayjs object with [jalali calendar](https://github.com/fingerpich/jalali-moment)
+>>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
 
 ## 📅 Handling Dates with jalali-moment
 
@@ -107,6 +117,7 @@ const jalaliDate = moment("1403-01-01", "jYYYY-jMM-jDD");
 <Calendar value={jalaliDate} />
 ```
 
+<<<<<<< HEAD
 To convert or format Jalali and Gregorian dates:
 
 ```tsx
@@ -156,3 +167,10 @@ This project is licensed under the MIT License — feel free to use it in person
 
 Thank you for using antd-jalali-plus-v2!
 If you have any questions or want to contribute, please open issues or pull requests on GitHub.
+=======
+You can read more information about daysjs jalali on [jalali-moment repo](https://github.com/fingerpich/jalali-moment).
+
+## Contributors
+<a href="https://github.com/mr-mohamadmhz">
+<img src="https://github.com/mr-mohamadmhz.png" width="60px;"/></a></sub>
+>>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
