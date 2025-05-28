@@ -93,11 +93,9 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
-<<<<<<< HEAD
 =======
 ### How to set value  
 You should pass dayjs object with [jalali calendar](https://github.com/fingerpich/jalali-moment)
->>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
 
 ## 📅 Handling Dates with jalali-moment
 
@@ -116,7 +114,6 @@ const jalaliDate = moment("1403-01-01", "jYYYY-jMM-jDD");
 <Calendar value={jalaliDate} />
 ```
 
-<<<<<<< HEAD
 To convert or format Jalali and Gregorian dates:
 
 ```tsx
