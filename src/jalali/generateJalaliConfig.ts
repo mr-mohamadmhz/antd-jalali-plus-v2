@@ -1,12 +1,10 @@
-// generateJalaliConfig.ts - Using jalali-moment instead of dayjs + jalali-moment
 import moment, { Moment } from "jalali-moment";
 import { noteOnce } from "rc-util/lib/warning";
 import type { GenerateConfig } from "rc-picker/es/generate";
+import customFaLocale from "./locale";
 
-// Load Persian locale
 moment.locale("fa");
 
-// Mapping for i18n locales
 const localeMap: Record<string, string> = {
   en_GB: "en-gb",
   en_US: "en",
@@ -58,12 +56,26 @@ const generateJalaliConfig: GenerateConfig<Moment> = {
 
   // Locale support
   locale: {
-    getWeekFirstDate: (locale, date) => date.clone().locale(parseLocale(locale)).weekday(0),
-    getWeekFirstDay: (locale) => moment().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
-    getWeek: (locale, date) => date.clone().locale(parseLocale(locale)).week(),
-    getShortWeekDays: (locale) => moment().locale(parseLocale(locale)).localeData().weekdaysMin(),
-    getShortMonths: (locale) => moment().locale(parseLocale(locale)).localeData().monthsShort(),
-    format: (locale, date, formatStr) => date.clone().locale(parseLocale(locale)).format(formatStr),
+    getWeekFirstDate: (locale, date) =>
+      date.clone().locale(parseLocale(locale)).weekday(0),
+    getWeekFirstDay: (locale) =>
+      moment().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
+    getWeek: (locale, date) =>
+      date.clone().locale(parseLocale(locale)).week(),
+    getShortWeekDays: (locale) => {
+      const parsedLocale = parseLocale(locale);
+      return parsedLocale === "fa"
+        ? customFaLocale.weekdaysMin
+        : moment().locale(parsedLocale).localeData().weekdaysMin();
+    },
+    getShortMonths: (locale) => {
+      const parsedLocale = parseLocale(locale);
+      return parsedLocale === "fa"
+        ? customFaLocale.monthsShort
+        : moment().locale(parsedLocale).localeData().monthsShort();
+    },
+    format: (locale, date, formatStr) =>
+      date.clone().locale(parseLocale(locale)).format(formatStr),
     parse: (locale, text, formats): Moment | null => {
       const localeStr = parseLocale(locale);
       for (let i = 0; i < formats.length; i++) {

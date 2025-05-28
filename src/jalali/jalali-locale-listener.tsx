@@ -3,7 +3,7 @@ import useJalaliLocaleListener from "./jalali-locale-listener-hook";
 
 const JalaliLocaleListener: FC = () => {
   useJalaliLocaleListener();
-  return null; // بهتره به جای <></> این رو استفاده کنیم وقتی رندر نداریم
+  return null;
 };
 
 export default JalaliLocaleListener;

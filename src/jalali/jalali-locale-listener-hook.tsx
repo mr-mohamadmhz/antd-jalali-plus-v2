@@ -1,5 +1,4 @@
-// useJalaliLocaleListener.ts - using jalali-moment for locale switching
-import { useEffect, useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ConfigProvider } from "antd";
 import moment from "jalali-moment";
 

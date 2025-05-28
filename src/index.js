@@ -26,7 +26,6 @@ const { Title } = Typography;
 const App = () => {
   const [direction, setDirection] = React.useState("rtl");
   const [locale, setLocale] = React.useState(fa_IR);
-  const [calendar, setCalendar] = React.useState("jalali");
   const [selectedDates, setSelectedDates] = React.useState({
     gregorian: "",
     jalali: "",
@@ -39,12 +38,6 @@ const App = () => {
   const changeLocale = e => {
     const newLocale = e.target.value;
     setLocale(newLocale);
-
-    if (newLocale === en_US) {
-      setCalendar("gregory");
-    } else {
-      setCalendar("jalali");
-    }
   };
 
   const onJalaliChange = value => {
@@ -100,7 +93,7 @@ const App = () => {
                   EN
                 </Radio.Button>
                 <Radio.Button key="fa" value={fa_IR}>
-                  FA_IR
+                  FA
                 </Radio.Button>
               </Radio.Group>
             </div>
@@ -134,10 +127,7 @@ const App = () => {
                     Jalali Date Picker
                   </label>
                   <DatePickerJalali
-                    direction={direction}
                     onChange={onJalaliChange}
-                    calendar={calendar}
-                    locale={locale}
                     style={{ width: "100%" }}
                   />
                 </Col>
@@ -152,28 +142,18 @@ const App = () => {
                   >
                     Jalali Range Picker
                   </label>
-                  <DatePickerJalali.RangePicker
-                    calendar={calendar}
-                    locale={locale}
-                    direction={direction}
-                    style={{ width: "100%" }}
-                  />
+                  <DatePickerJalali.RangePicker style={{ width: "100%" }} />
                 </Col>
               </Row>
 
               <div style={{ marginTop: 24 }}>
                 <label style={{ fontWeight: "bold" }}>Jalali Calendar</label>
-                <Calendar
-                  calendar={calendar}
-                  locale={locale}
-                  fullscreen={false}
-                />
+                <Calendar fullscreen={false} />
               </div>
 
               <Card
                 title="Selected Dates"
                 size="small"
-                bordered
                 style={{ marginTop: 24, backgroundColor: "#fafafa" }}
               >
                 <p>
