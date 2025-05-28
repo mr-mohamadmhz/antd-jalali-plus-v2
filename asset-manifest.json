@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/antd-jalali-plus-v2/static/css/main.b75b7b9a.css",
+    "main.js": "/antd-jalali-plus-v2/static/js/main.c151cf52.js",
+    "index.html": "/antd-jalali-plus-v2/index.html",
+    "main.b75b7b9a.css.map": "/antd-jalali-plus-v2/static/css/main.b75b7b9a.css.map",
+    "main.c151cf52.js.map": "/antd-jalali-plus-v2/static/js/main.c151cf52.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b75b7b9a.css",
+    "static/js/main.c151cf52.js"
+  ]
+}
