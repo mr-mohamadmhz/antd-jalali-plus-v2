@@ -172,4 +172,3 @@ You can read more information about daysjs jalali on [jalali-moment repo](https:
 ## Contributors
 <a href="https://github.com/mr-mohamadmhz">
 <img src="https://github.com/mr-mohamadmhz.png" width="60px;"/></a></sub>
->>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
