@@ -1,4 +1,4 @@
-// generateJalaliConfig.ts - Using jalali-moment instead of dayjs + jalaliday
+// generateJalaliConfig.ts - Using jalali-moment instead of dayjs + jalali-moment
 import moment, { Moment } from "jalali-moment";
 import { noteOnce } from "rc-util/lib/warning";
 import type { GenerateConfig } from "rc-picker/es/generate";
