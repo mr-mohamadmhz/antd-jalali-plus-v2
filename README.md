@@ -1,11 +1,10 @@
 # Ant Design Jalali/Shamsi DatePicker - v2
 
-<<<<<<< HEAD
-Welcome to **antd-jalali-plus-v2**, a fully-featured Jalali (Shamsi/Persian) DatePicker, RangePicker, and Calendar component set built on top of Ant Design v4 and v5. This package replaces the deprecated `jalali-moment` with `jalali-moment` for Jalali date handling and offers full RTL and localization support.
+#### Welcome to **antd-jalali-plus-v2**, a fully-featured Jalali (Shamsi/Persian) DatePicker, RangePicker, and Calendar component set built on top of Ant Design v4 and v5. This package replaces the deprecated `jalali-moment` with `jalali-moment` for Jalali date handling and offers full RTL and localization support.
+
 =======
 # Ant-Design Jalali/Hijri DatePicker (Ant 4/5)
 Ant Design Jalali/Shamsi calendar DatePicker and RangePicker (Support Ant design v5 and v4). [Day.js](https://github.com/iamkun/dayjs) and [jalali-moment](https://github.com/fingerpich/jalali-moment)
->>>>>>> 921c7d087f6c3359e7c3985c470b88f69b66a9b1
 
 ---
 
